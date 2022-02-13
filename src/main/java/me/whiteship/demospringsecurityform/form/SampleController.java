@@ -8,7 +8,6 @@ import java.security.Principal;
 
 @Controller
 public class SampleController {
-
     @GetMapping("/")
     public String index(Model model, Principal principal) {
         if (principal == null) {
@@ -16,7 +15,6 @@ public class SampleController {
         } else {
             model.addAttribute("message", "Hello, " + principal.getName());
         }
-
         return "index";
     }
 
@@ -37,5 +35,4 @@ public class SampleController {
         model.addAttribute("message", "Hello Admin, " + principal.getName());
         return "admin";
     }
-
 }
